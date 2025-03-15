@@ -76,8 +76,8 @@ const login = async (req, res, next) => {
       .cookie("refresh_access_token", refreshToken, {
         maxAge:  7 *24 * 60 * 60 * 1000,
         httpOnly: true,
-        // secure: true,
-        // sameSite: "None"
+        secure: true,
+        sameSite: "None"
       })
       .status(200)
       .json({ userInfo, token });
@@ -92,8 +92,8 @@ const logout = async (req, res, next) => {
     res
       .clearCookie("refresh_access_token", {
         httpOnly: true,
-        // secure:true,
-        // sameSite:"None",
+        secure:true,
+        sameSite:"None",
       })
       .status(204)
       .json("logout with success");
