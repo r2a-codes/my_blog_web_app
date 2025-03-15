@@ -1,0 +1,38 @@
+require("dotenv").config();
+const express = require("express");
+const cookie = require("cookie-parser");
+const cors = require("cors");
+
+const { errorHandler } = require("./Middlewares/errors");
+const mongoDbConnection = require("./Middlewares/db");
+const auth = require("./Routes/auth");
+const blogs = require("./Routes/blogs");
+const user = require("./Routes/user");
+const server = express();
+
+server.use(express.json());
+
+server.use(cookie());
+
+const clientUrl = process.env.CLIENT_URL.split(",")
+
+
+
+server.use(
+  cors({
+    origin: clientUrl,
+    credentials: true,
+  })
+);
+
+const Port = process.env.PORT || 5000;
+
+server.use("/api/auth", auth);
+server.use("/api/blog", blogs);
+server.use("/api/user", user);
+
+server.use(errorHandler);
+const expressServer = server.listen(Port, () => {
+  mongoDbConnection();
+  console.log(`server is running on port : ${Port}`);
+});
