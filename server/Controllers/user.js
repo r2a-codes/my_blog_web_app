@@ -20,7 +20,7 @@ const getUser = async (req, res, next) => {
 
 
 
-    const allBlogs = await Blogs.find();
+    const allBlogs = await Blogs.find().sort({ updatedAt: -1 });
 
     const blogs = allBlogs.filter(blog => blog.author._id.toString() == id )
     const savedBlogs = allBlogs.filter(blog => {
