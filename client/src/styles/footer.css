@@ -1,0 +1,35 @@
+footer {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0px;
+  gap: 5px;
+}
+
+footer .social_media_wrapper {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+}
+footer .social_media_wrapper .icons {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 500ms ease-in-out;
+  background: transparent;
+}
+
+footer .social_media_wrapper .icons:hover {
+  transform: scale(1.2);
+}
+
+footer .copy-right_wrapper {
+  letter-spacing: 1.5px;
+  color: #acacad;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: transparent;
+}

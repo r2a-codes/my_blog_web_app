@@ -1,0 +1,129 @@
+.form_container {
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../assets/sign_in.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_container form {
+  width: 400px;
+  min-width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+
+}
+
+.form_container form label {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  gap: 10px;
+  color: gainsboro;
+}
+
+#email,
+#username {
+  width: 100%;
+  padding: 5px 8px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background: none;
+}
+
+.password,
+.confirm-password {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.password input,
+.confirm-password input {
+  flex: 2;
+  padding: 5px 8px;
+  outline: none;
+  border: none;
+  border-radius: inherit;
+  background: none;
+}
+
+.form_container .icons {
+  background: transparent;
+  font-size: 1.5rem;
+
+}
+
+form p {
+  font-size: 0.7em;
+}
+.password svg,
+.confirm-password svg {
+  margin: 2px 7px;
+  padding: 3px;
+}
+
+.form_container form button {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 7px 15px;
+  color: white;
+  background-color: #929292;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.form_container form button:hover {
+  background: var(--primary-blue);
+}
+
+.error {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--error-color);
+  text-align: center;
+}
+
+.check {
+  font-size: 14px;
+  background: transparent;
+  color: inherit;
+  font-weight: 400;
+}
+
+.form_container p {
+  background: transparent;
+  color: gainsboro;
+  font-size: 0.95rem;
+  opacity: 0.9;
+
+}
+.form_container p span {
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.form_container p span:hover {
+  color: var(--primary-blue);
+}
